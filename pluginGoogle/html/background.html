@@ -1,0 +1,43 @@
+<html ng-app="iwheelfind">
+	<head>
+		<title>IWheelFind</title>
+    <script type="text/javascript" src="../js/contentScript.js"></script>
+    <script type="text/javascript" src="../js/angularInsert.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+
+	</head>
+
+	<body>
+    <h1>IWheelFind</h1>
+
+  <form ng-submit="insert()">
+    <p>
+      <label for="url">Nom de Domaine :</label>
+      <input type="text" name="url" id="url" />
+    </p>
+    <p>
+      Accessibilités :
+      <br />
+      <input type="checkbox" name="ascenceur" id="asc" value="Ascenceur" ng-model="nom"/>
+      <label for="asc">Ascenceur</label>
+      <br />
+      <input type="checkbox" name="toilette" id="wc" value="WC" ng-model="wc"/>
+      <label for="wc">WC</label>
+      <br />
+      <input type="checkbox" name="rampe" id="rampe" value="Rampes" ng-model="rampe"/>
+      <label for="rampe">Rampes</label>
+      <br />
+      <input type="checkbox" name="parking" id="parking" value="Parking" ng-model="parking"/>
+      <label for="parking">Parking</label>
+    </p>
+
+    <input type="submit" value="Envoyer" />
+
+  </form>
+
+    	
+	</body>
+
+</html>

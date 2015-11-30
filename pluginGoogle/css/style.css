@@ -1,0 +1,47 @@
+html {
+    background-color: white;
+    /* margin: 10%; */
+    /* margin-top: 20px; */
+    /*height: 300px;*/
+    width: 500px;
+    /* padding: 20px; */
+}
+body {
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #f3f6fa;
+    border: 1px solid;
+    border-color: #c2cadb #bbc5d6 #b7c0cd;
+    border-radius: 7px;
+}
+#url {
+    /* avoid an excessively wide status text */
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 400px;
+}
+
+h1 {
+    padding: 0 15px;
+  line-height: 38px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #7f889e;
+  text-shadow: 0 1px rgba(white, .7);
+  background: #eceff5;
+  border-bottom: 1px solid #c5ccdb;
+  border-radius: 7px 7px 0 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+  }
+}
