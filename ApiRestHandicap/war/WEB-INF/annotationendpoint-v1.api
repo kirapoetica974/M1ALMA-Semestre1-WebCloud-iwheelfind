@@ -1,0 +1,238 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://monapiresthandicap.appspot.com/_ah/api",
+  "name" : "annotationendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://monapiresthandicap.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "mycompany.com",
+  "ownerName" : "mycompany.com",
+  "packagePath" : "services",
+  "methods" : {
+    "annotationendpoint.listAnnotation" : {
+      "path" : "annotation",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "apiRest.AnnotationEndpoint.listAnnotation",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "annotationendpoint.getAnnotation" : {
+      "path" : "annotation/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "apiRest.AnnotationEndpoint.getAnnotation",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "annotationendpoint.removeAnnotation" : {
+      "path" : "annotation/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "apiRest.AnnotationEndpoint.removeAnnotation",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "annotationendpoint.insertAnnotation" : {
+      "path" : "annotation",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "apiRest.AnnotationEndpoint.insertAnnotation",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "annotationendpoint.listAnnotationByAsc" : {
+      "path" : "collectionresponse_annotation/{ascenceur}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "apiRest.AnnotationEndpoint.getAnnotationByAsc",
+      "request" : {
+        "parameters" : {
+          "ascenceur" : {
+            "type" : "boolean",
+            "required" : true
+          },
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "annotationendpoint.updateAnnotation" : {
+      "path" : "annotation",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "apiRest.AnnotationEndpoint.updateAnnotation",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "CollectionResponse_Annotation" : {
+        "id" : "CollectionResponse_Annotation",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Annotation"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Annotation" : {
+        "id" : "Annotation",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "url" : {
+            "type" : "string"
+          },
+          "ascenceur" : {
+            "type" : "boolean"
+          },
+          "wc" : {
+            "type" : "boolean"
+          },
+          "rampe" : {
+            "type" : "boolean"
+          },
+          "parking" : {
+            "type" : "boolean"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "apiRest.AnnotationEndpoint.listAnnotation" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Annotation"
+        }
+      },
+      "apiRest.AnnotationEndpoint.getAnnotation" : {
+        "response" : {
+          "$ref" : "Annotation"
+        }
+      },
+      "apiRest.AnnotationEndpoint.removeAnnotation" : {
+      },
+      "apiRest.AnnotationEndpoint.insertAnnotation" : {
+        "request" : {
+          "$ref" : "Annotation"
+        },
+        "response" : {
+          "$ref" : "Annotation"
+        }
+      },
+      "apiRest.AnnotationEndpoint.getAnnotationByAsc" : {
+        "response" : {
+          "$ref" : "CollectionResponse_Annotation"
+        }
+      },
+      "apiRest.AnnotationEndpoint.updateAnnotation" : {
+        "request" : {
+          "$ref" : "Annotation"
+        },
+        "response" : {
+          "$ref" : "Annotation"
+        }
+      }
+    }
+  }
+}
