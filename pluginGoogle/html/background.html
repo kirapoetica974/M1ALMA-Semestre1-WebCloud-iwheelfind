@@ -1,6 +1,7 @@
 <html ng-app="iwheelfind">
 	<head>
 		<title>IWheelFind</title>
+    <meta charset="UTF-8">
     <script type="text/javascript" src="../js/contentScript.js"></script>
     <script type="text/javascript" src="../js/angularInsert.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -15,22 +16,42 @@
   <form ng-submit="insert()">
     <p>
       <label for="url">Nom de Domaine :</label>
-      <input type="text" name="url" id="url" />
+      <input type="text" name="url" id="url" disabled="disabled"/>
     </p>
     <p>
       Accessibilités :
       <br />
-      <input type="checkbox" name="ascenceur" id="asc" value="Ascenceur" ng-model="nom"/>
-      <label for="asc">Ascenceur</label>
+      <input type="checkbox" name="ascenceur" id="liftToAllFloor" value="liftToAllFloor" ng-model="liftToAllFloor"/>
+      <label for="liftToAllFloor">Ascenceur</label>
+
       <br />
-      <input type="checkbox" name="toilette" id="wc" value="WC" ng-model="wc"/>
-      <label for="wc">WC</label>
+      <input type="checkbox" name="automaticDoor" id="automaticDoor" value="automaticDoor" ng-model="automaticDoor"/>
+      <label for="automaticDoor">Portes automatiques</label>
+
       <br />
-      <input type="checkbox" name="rampe" id="rampe" value="Rampes" ng-model="rampe"/>
-      <label for="rampe">Rampes</label>
+      <input type="checkbox" name="ramp" id="ramp" value="ramp" ng-model="ramp"/>
+      <label for="ramp">Rampes</label>
+
       <br />
-      <input type="checkbox" name="parking" id="parking" value="Parking" ng-model="parking"/>
-      <label for="parking">Parking</label>
+      <input type="checkbox" name="signLang" id="signLang" value="signLang" ng-model="signLang"/>
+      <label for="signLang">Personne pratiquant le langage des signes</label>
+
+      <br />
+      <input type="checkbox" name="hearingSupportSystem" id="hearingSupportSystem" value="hearingSupportSystem" ng-model="hearingSupportSystem"/>
+      <label for="hearingSupportSystem">Système d'aide aux personnes à déficience auditive</label>
+
+      <br />
+      <input type="checkbox" name="visualSupportSystem" id="visualSupportSystem" value="visualSupportSystem" ng-model="visualSupportSystem"/>
+      <label for="visualSupportSystem">Système d'aide aux personnes à déficience visuelle</label>
+
+      <br />
+      <input type="checkbox" name="disabledParking" id="disabledParking" value="disabledParking" ng-model="disabledParking"/>
+      <label for="disabledParking">Parking avec des places pour handicapés</label>
+
+      <br />
+      <input type="checkbox" name="disabledToilets" id="disabledToilets" value="disabledToilets" ng-model="disabledToilets"/>
+      <label for="disabledToilets">Toilettes accessibles aux handicapés</label>
+
     </p>
 
     <input type="submit" value="Envoyer" />
