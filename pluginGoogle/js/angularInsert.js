@@ -1,19 +1,64 @@
-var app = angular.module('iwheelfind', []).controller('SPcontroller1', ['$scope', '$window',
+var app = angular.module('iwheelfind', []).controller('AWFcontroller', ['$scope', '$window',
   function($scope, $window) {
 
+    var url1 = $scope.url;
+    
+    var ide = 10000000000 * Math.random();
+    var lift = false;
+    var door = false;
+    var rampe = false;
+    var lang = false;
+    var hear = false;
+    var visual = false;
+    var park = false;
+    var toilets = false;
+    
+    $scope.clickLift = function(){
+      lift = true;
+    }
+    
+    $scope.clickAutoDoor = function(){
+      door = true;
+    }
+    
+    $scope.clickRamp = function(){
+      rampe = true;
+    }
+    
+    $scope.clickSignLang = function(){
+      lang = true;
+    }
+    
+    $scope.clickhearing = function(){
+      hear = true;
+    }
+    
+    $scope.clickVisual = function(){
+      visual = true;
+    }
+    
+    $scope.clickParking = function(){
+      park = true;
+    }
+    
+    $scope.clickToilets = function(){
+      toilets = true;
+    }
 
-    $window.init = function() {
-      var rootApi = "https://1-dot-signpetii.appspot.com/_ah/api/";
-      gapi.client.load('anotationendpoint', 'v1', function() {
-        console.log("score api loaded");
-        gapi.client.anotationendpoint.insertAnnotation().execute(
+    $scope.insert = function() {
+      var rootApi = 'https://iwheelfind.appspot.com/_ah/api/';
+      gapi.client.load('annotationsiteendpoint', 'v1', function() {
+      console.log("todos api loaded");
+
+      gapi.client.annotationsiteendpoint.insertAnnotationSite({id:ide,automaticDoor:door,disabledParking:park,disabledToilets:toilets,hearingSupportSystem:hear,liftToAllFloors:lift,ramp:rampe,signLang:lang,url:url1,visualSupportSystem:visual,listeMotsCles:["avion"]}).execute(
           function(resp) {
-            $scope.petition = resp.items;
-            $scope.$apply();
             console.log(resp);
           });
-        
-      }, rootApi);
+      
+      location.reload();
+
+
+    }, rootApi);
     }
   }
 ]);
